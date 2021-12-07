@@ -1,6 +1,5 @@
 package fr.lernejo.chat;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ChatMessageRepository {
