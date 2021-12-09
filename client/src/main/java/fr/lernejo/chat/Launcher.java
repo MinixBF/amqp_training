@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Scanner;
 
+import static java.lang.System.exit;
+
 @SpringBootApplication
 public class Launcher {
     public static void main(String[] args) {
@@ -21,6 +23,7 @@ public class Launcher {
             input = scanner.nextLine();
             if(input.equals("q")) {
                 start = false;
+                exit(0);
             }else {
                 rabbitTemplate.convertAndSend("chat_messages", input);
             }

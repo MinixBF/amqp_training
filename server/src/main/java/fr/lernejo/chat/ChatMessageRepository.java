@@ -1,19 +1,19 @@
 package fr.lernejo.chat;
 
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ChatMessageRepository {
-    private static List<String> messages ;
+    private static final ArrayList<String> messages = new ArrayList<String>();
 
-    public ChatMessageRepository(List<String> messages) {
-        ChatMessageRepository.messages = messages;
-    }
-
-    static void addChatMessage(String message){
+    public static void addChatMessage(String message){
         messages.add(message);
     }
 
-    List<String> getLastTenMessages(){
+    public List<String> getLastTenMessages(){
         return messages.subList(Math.max(0, messages.size() - 10), messages.size());
     }
 }

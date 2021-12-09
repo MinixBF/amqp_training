@@ -10,9 +10,8 @@ import java.util.List;
 public class ChatMessageController {
     private final ChatMessageRepository repository;
 
-    public ChatMessageController() {
-        List<String> messages = new ArrayList<>();
-        this.repository = new ChatMessageRepository(messages);
+    public ChatMessageController(ChatMessageRepository repository) {
+        this.repository = repository;
     }
 
     @GetMapping("/api/message")
